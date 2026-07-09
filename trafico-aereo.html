@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EDA | Escuela de las Américas - Centro de Capacitación</title>
+<title>Tráfico Aéreo | EDA - Escuela de las Américas</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -298,6 +298,61 @@
   .contact-cta-box{ background:var(--bg-soft); border:1px solid var(--border-soft); border-radius:18px; padding:36px 32px; display:flex; flex-direction:column; justify-content:center; gap:16px; }
   .contact-cta-box h3{ font-size:1.5rem; }
 
+  /* PROGRAM DETAIL PAGE (Tráfico Aéreo, etc.) */
+  .program-hero{
+    position:relative; min-height:320px; display:flex; align-items:flex-end; overflow:hidden;
+    padding-top:70px;
+    background: linear-gradient(135deg, var(--purple-deep) 0%, var(--purple) 55%, var(--purple-dark) 100%);
+  }
+  .program-hero-overlay{ position:absolute; inset:0; background:radial-gradient(circle at 85% 15%, rgba(255,255,255,.14) 0%, transparent 55%); }
+  .program-hero-content{ position:relative; z-index:1; padding:56px 0 60px; max-width:680px; }
+  .program-hero-content .eyebrow{ background:rgba(255,255,255,.14); border-color:rgba(255,255,255,.32); color:#fff; }
+  .program-hero-content h1{ color:#fff; font-size:clamp(2.1rem, 4vw, 3rem); margin-top:16px; }
+  .program-hero-content p{ color:#EDE0EC; margin-top:16px; font-size:1.02rem; max-width:560px; }
+  .program-hero-actions{ display:flex; gap:14px; margin-top:30px; flex-wrap:wrap; }
+
+  .breadcrumb{ display:flex; align-items:center; gap:8px; font-size:.85rem; color:var(--gray-owl); margin-bottom:32px; flex-wrap:wrap; }
+  .breadcrumb a{ color:var(--gray-owl); transition:.2s; }
+  .breadcrumb a:hover{ color:var(--purple); }
+  .breadcrumb svg{ width:14px; height:14px; flex-shrink:0; color:var(--gray-owl); }
+  .breadcrumb span{ color:var(--ink); font-weight:600; }
+
+  .program-grid{ display:grid; grid-template-columns:1.6fr 1fr; gap:48px; align-items:start; }
+  .lead-text{ margin-top:18px; font-size:1.02rem; color:var(--text-dark); }
+  .checklist{ display:flex; flex-direction:column; gap:14px; margin-top:26px; }
+  .checklist li{ display:flex; align-items:flex-start; gap:12px; font-size:.96rem; color:var(--text-dark); }
+  .checklist li svg{ width:20px; height:20px; flex-shrink:0; color:var(--purple); margin-top:2px; }
+
+  .cert-box{ margin-top:32px; background:var(--bg-soft); border:1px solid var(--border-soft); border-radius:16px; padding:24px 26px; }
+  .cert-box h4{ display:flex; align-items:center; gap:10px; font-size:1.08rem; }
+  .cert-box h4 svg{ width:22px; height:22px; color:var(--purple); flex-shrink:0; }
+  .cert-box p{ margin-top:10px; font-size:.92rem; color:var(--text-dark); }
+  .degree-title{ margin-top:14px; font-weight:700; color:var(--purple-dark); font-size:.92rem; }
+
+  .sidebar-card{ position:sticky; top:112px; background:var(--white); border:1px solid var(--border-soft); border-radius:var(--radius); box-shadow:var(--shadow-sm); padding:28px 26px; }
+  .sidebar-card h4{ font-size:1.1rem; margin-bottom:18px; }
+  .sidebar-list{ display:flex; flex-direction:column; gap:14px; }
+  .sidebar-list div{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; border-bottom:1px dashed var(--border-soft); padding-bottom:12px; }
+  .sidebar-list div:last-child{ border-bottom:none; padding-bottom:0; }
+  .sidebar-list b{ font-size:.86rem; color:var(--gray-owl); font-weight:600; flex-shrink:0; }
+  .sidebar-list span{ font-size:.9rem; color:var(--ink); font-weight:600; text-align:right; }
+
+  .profesores-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+
+  .gallery-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+  .gallery-item{ height:200px; border-radius:16px; background-size:cover; background-position:center; border:1px solid var(--border-soft); }
+
+  @media (max-width: 980px){
+    .program-grid{ grid-template-columns:1fr; }
+    .sidebar-card{ position:static; }
+    .profesores-grid{ grid-template-columns:1fr 1fr; }
+    .gallery-grid{ grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width: 768px){
+    .profesores-grid{ grid-template-columns:1fr; }
+    .gallery-grid{ grid-template-columns:1fr 1fr; }
+  }
+
   /* FOOTER */
   footer{ background:#1A1A1A; color:#CFCFCF; padding:56px 0 0; }
   .footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,.12); }
@@ -396,6 +451,7 @@
     .about-hero-content{ padding:44px 0; }
   }
 </style>
+
 </head>
 <body>
 
@@ -416,7 +472,7 @@
       <a href="contacto.html">Contacto</a>
     </nav>
     <div class="nav-cta">
-      <button class="btn btn-primary btn-sm" onclick="openModal()">Postúlate</button>
+      <button class="btn btn-primary btn-sm" onclick="openModal('Tráfico Aéreo')">Postúlate</button>
       <button class="burger" id="burgerBtn" aria-label="Abrir menú">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
       </button>
@@ -424,66 +480,138 @@
   </div>
 </header>
 
-<!-- ================= HERO / INICIO ================= -->
-<section id="inicio" class="hero">
-  <div class="hero-blob blob1"></div>
-  <div class="hero-blob blob2"></div>
-  <div class="container hero-grid">
-    <div>
-      <span class="eyebrow">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
-        Programas 100% certificados
-      </span>
-      <h1>Capacítate hoy, <em>despega</em> tu futuro profesional</h1>
-      <p class="lead">En EDA - Escuela de las Américas ofrecemos capacitación práctica y certificada en Tráfico Aéreo, Gastronomía y Estética &amp; Belleza. Programas de <strong>2 a 6 meses</strong> diseñados para que te insertes rápido en el mundo laboral.</p>
-      <div class="hero-actions">
-        <button class="btn btn-primary" onclick="openModal()">Postúlate ahora</button>
-        <a href="oferta-academica.html" class="btn btn-outline">Ver oferta académica</a>
-      </div>
-      <div class="hero-stats">
-        <div><strong>3</strong><span>Programas certificados</span></div>
-        <div><strong>2-6</strong><span>Meses de duración</span></div>
-        <div><strong>+500</strong><span>Estudiantes capacitados</span></div>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <span class="tag">Certificación oficial</span>
-      <div class="hero-visual-inner">
-        <div class="mini-card">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.5V9a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 4 9v7.5"/><path d="M3.3 7.3 12 12l8.7-4.7M12 12v10"/></svg></div>
-          <div><b>Tráfico Aéreo</b><small>Aeropuertos y aerolíneas</small></div>
-        </div>
-        <div class="mini-card">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16M4 12a2 2 0 0 1 2-2h.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0H18a2 2 0 0 1 2 2M4 12l1 8h14l1-8"/></svg></div>
-          <div><b>Repostería</b><small>Técnicas y decoración</small></div>
-        </div>
-        <div class="mini-card">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c1.5 3 4 4.5 4 8a4 4 0 0 1-8 0c0-3.5 2.5-5 4-8Z"/><path d="M6 21c1-2 3-3 6-3s5 1 6 3"/></svg></div>
-          <div><b>Estética y Belleza</b><small>Maquillaje y cuidado facial</small></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container features-strip">
-    <div class="feature-item">
-      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M8 21l1.5-4.5h5L16 21M5 8l2 1M19 8l-2 1"/></svg></div>
-      <h4>Certificación reconocida</h4>
-      <p>Cada programa entrega un certificado avalado al finalizar tu formación.</p>
-    </div>
-    <div class="feature-item">
-      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15Z"/></svg></div>
-      <h4>Docentes especializados</h4>
-      <p>Instructores con experiencia real en cada industria que enseñan.</p>
-    </div>
-    <div class="feature-item">
-      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-      <h4>Bolsa de prácticas</h4>
-      <p>Te acompañamos en tu inserción laboral al terminar el programa.</p>
+<!-- ================= PROGRAM HERO ================= -->
+<section class="program-hero">
+  <div class="program-hero-overlay"></div>
+  <div class="container program-hero-content">
+    <span class="eyebrow">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+      Programa certificado
+    </span>
+    <h1>Tráfico Aéreo</h1>
+    <p>Fórmate como agente de tráfico aéreo y counter: atención al pasajero, manejo de equipaje, procesos de check-in y normativa aeroportuaria, con un enfoque totalmente práctico.</p>
+    <div class="program-hero-actions">
+      <button class="btn btn-primary" onclick="openModal('Tráfico Aéreo')">Postularme ahora</button>
+      <a href="oferta-academica.html" class="btn btn-light">Ver otros programas</a>
     </div>
   </div>
 </section>
 
+<!-- ================= BREADCRUMB + CONTENIDO ================= -->
+<section class="section-pad">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Inicio</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      <a href="oferta-academica.html">Oferta Académica</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      <span>Tráfico Aéreo</span>
+    </div>
+
+    <div class="program-grid">
+      <div>
+        <span class="eyebrow">Sobre el programa</span>
+        <h2>Todo lo que necesitas para trabajar en el sector aeroportuario</h2>
+        <p class="lead-text">El programa de Tráfico Aéreo de EDA prepara agentes capaces de gestionar la experiencia del pasajero de principio a fin: check-in, emisión de tarjetas de embarque, manejo y control de equipaje, atención en counter, procedimientos de seguridad aeroportuaria y normativa nacional e internacional de aviación civil. Las clases combinan teoría con simulaciones prácticas de counter, para que salgas listo para tu primer día de trabajo.</p>
+
+        <ul class="checklist">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Atención al pasajero y servicio al cliente en aeropuertos</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Procesos de check-in, emisión de boarding pass y equipaje</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Normativa aeroportuaria y seguridad de la aviación civil</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Manejo de sistemas de reservas y counter de aerolíneas</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Prácticas simuladas en counter y atención de casos reales</li>
+        </ul>
+
+        <div class="cert-box">
+          <h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M8 21l1.5-4.5h5L16 21M5 8l2 1M19 8l-2 1"/></svg>
+            Certificación
+          </h4>
+          <p>Al aprobar el programa recibes el Certificado de Aptitud Profesional en Tráfico Aéreo avalado por EDA - Escuela de las Américas, con el respaldo de horas prácticas y teóricas verificables.</p>
+          <div class="degree-title">Título con el que egresas: Agente de Tráfico Aéreo y Counter</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="sidebar-card">
+          <h4>Ficha del programa</h4>
+          <div class="sidebar-list">
+            <div><b>Duración</b><span>4 a 6 meses</span></div>
+            <div><b>Modalidad</b><span>Presencial</span></div>
+            <div><b>Horario</b><span>Diurno y vespertino</span></div>
+            <div><b>Certificado</b><span>Sí, al finalizar</span></div>
+            <div><b>Título</b><span>Agente de Tráfico Aéreo y Counter</span></div>
+            <div><b>Prácticas</b><span>Bolsa de prácticas EDA</span></div>
+          </div>
+          <button class="btn btn-primary btn-block" style="margin-top:22px;" onclick="openModal('Tráfico Aéreo')">Postularme ahora</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROFESORES ================= -->
+<section class="section-pad bg-soft">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Nuestro equipo</span>
+      <h2>Profesores del programa</h2>
+      <p>Instructores con experiencia real en aerolíneas y operaciones aeroportuarias.</p>
+    </div>
+    <div class="profesores-grid">
+      <div class="team-card">
+        <div class="team-avatar" style="background:var(--purple-light-2);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--purple);"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h4>Lic. Andrea Salinas</h4>
+        <div class="role">Coordinadora académica del programa. Más de 10 años de experiencia en operaciones de counter y atención al pasajero.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:var(--purple-light-2);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--purple);"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h4>Ing. Roberto Chávez</h4>
+        <div class="role">Especialista en normativa aeroportuaria y seguridad de la aviación civil. Exfuncionario de aeropuerto internacional.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:var(--purple-light-2);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--purple);"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h4>Lcda. Paola Reinoso</h4>
+        <div class="role">Instructora de atención al cliente y sistemas de reservas, con trayectoria en aerolíneas comerciales.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALERIA ================= -->
+<section class="section-pad">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Galería</span>
+      <h2>Imágenes referenciales del programa</h2>
+      <p>Un vistazo al entorno y las actividades relacionadas con la formación en Tráfico Aéreo.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1760581176635-2cea8ae93b5f?fm=jpg&q=70&w=900&auto=format&fit=crop');"></div>
+      <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1730288278805-42d46b17438d?fm=jpg&q=70&w=900&auto=format&fit=crop');"></div>
+      <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1483450388369-9ed95738483c?fm=jpg&q=70&w=900&auto=format&fit=crop');"></div>
+      <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1710970251113-348e39b9c382?fm=jpg&q=70&w=900&auto=format&fit=crop');"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA FINAL ================= -->
+<section class="section-pad bg-soft">
+  <div class="container" style="text-align:center;">
+    <span class="eyebrow">¿Listo para despegar?</span>
+    <h2 style="margin-top:14px;">Postúlate al programa de Tráfico Aéreo</h2>
+    <p style="max-width:560px; margin:16px auto 0; color:var(--text-dark);">Cupos limitados por período. Completa el formulario y un asesor académico te contactará para guiarte en el proceso de inscripción.</p>
+    <div style="margin-top:28px;">
+      <button class="btn btn-primary" onclick="openModal('Tráfico Aéreo')">Postularme ahora</button>
+    </div>
+  </div>
+</section>
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="container footer-grid">
@@ -530,7 +658,6 @@
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3Z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.5-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
   </span>
 </a>
-
 
 <!-- ================= MODAL FORM ================= -->
 <div class="modal-overlay" id="modalOverlay">
@@ -593,7 +720,6 @@
     </div>
   </div>
 </div>
-
 
 <script>
   // Mobile nav
