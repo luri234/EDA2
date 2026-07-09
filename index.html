@@ -112,26 +112,33 @@
   /* NAV */
   header.topnav{
     position:sticky; top:0; z-index:500;
-    background:rgba(255,255,255,.92);
+    background:rgba(255,255,255,.94);
     backdrop-filter:blur(8px);
     border-bottom:1px solid var(--border-soft);
+    box-shadow:0 2px 16px rgba(0,0,0,.04);
   }
   .nav-inner{
     max-width:1180px; margin:0 auto; padding:0 28px;
     display:flex; align-items:center; justify-content:space-between;
-    height:76px;
+    height:92px;
   }
-  .brand{ display:flex; align-items:center; gap:10px; }
-  .brand img{ height:46px; width:auto; }
-  .brand-text{ font-family:var(--font-display); font-weight:700; color:var(--ink); font-size:1.05rem; line-height:1.1; }
-  .brand-text span{ display:block; font-family:var(--font-body); font-weight:500; font-size:.62rem; letter-spacing:.06em; color:var(--gray-owl); text-transform:uppercase; }
+  .brand{ display:flex; align-items:center; gap:12px; }
+  .brand img{ height:64px; width:auto; }
+  .brand-text{ font-family:var(--font-display); font-weight:700; color:var(--ink); font-size:1.12rem; line-height:1.15; }
+  .brand-text span{ display:block; font-family:var(--font-body); font-weight:500; font-size:.62rem; letter-spacing:.07em; color:var(--gray-owl); text-transform:uppercase; margin-top:2px; }
 
-  nav.links{ display:flex; align-items:center; gap:6px; }
+  nav.links{ display:flex; align-items:center; gap:4px; }
   nav.links a{
-    font-weight:600; font-size:.92rem; color:var(--text-dark);
-    padding:10px 14px; border-radius:99px; transition:.2s;
+    position:relative; font-weight:600; font-size:.82rem; letter-spacing:.01em; color:var(--text-dark);
+    padding:10px 13px; border-radius:99px; transition:.2s;
   }
-  nav.links a:hover{ background:var(--bg-soft); color:var(--ink); }
+  nav.links a::after{
+    content:""; position:absolute; left:13px; right:13px; bottom:5px; height:2px;
+    background:var(--purple); border-radius:2px; transform:scaleX(0); transform-origin:center;
+    transition:transform .22s ease;
+  }
+  nav.links a:hover{ color:var(--purple-deep); }
+  nav.links a:hover::after{ transform:scaleX(1); }
   .nav-cta{ display:flex; align-items:center; gap:12px; }
   .burger{ display:none; background:none; border:none; cursor:pointer; padding:8px; }
   .burger svg{ width:26px; height:26px; color:var(--ink); }
@@ -197,6 +204,20 @@
   .pillar h3{ font-size:1.2rem; }
   .pillar-bar{ display:block; width:44px; height:3px; background:var(--purple); border-radius:2px; margin:10px 0 16px; }
   .pillar p{ font-size:.94rem; color:var(--text-dark); }
+
+  .team-head{ text-align:center; margin-top:80px; margin-bottom:36px; }
+  .team-head span.eyebrow{ margin-bottom:14px; }
+  .team-head h3{ font-size:clamp(1.5rem, 2.6vw, 2rem); margin-top:14px; }
+  .team-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+  .team-card{ background:var(--white); border:1px solid var(--border-soft); border-radius:var(--radius); padding:28px 20px 26px; text-align:center; box-shadow:var(--shadow-sm); transition:.25s; }
+  .team-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow); }
+  .team-avatar{ width:92px; height:92px; border-radius:50%; margin:0 auto 18px; display:flex; align-items:center; justify-content:center; }
+  .team-avatar svg{ width:42px; height:42px; }
+  .team-card h4{ font-size:1.02rem; color:var(--ink); }
+  .team-card .role{ font-size:.82rem; color:var(--gray-owl); margin-top:4px; margin-bottom:16px; line-height:1.5; }
+  .team-linkedin{ width:32px; height:32px; border-radius:50%; border:1px solid var(--border-soft); display:inline-flex; align-items:center; justify-content:center; color:var(--purple); margin-bottom:16px; transition:.2s; }
+  .team-linkedin:hover{ background:var(--purple); border-color:var(--purple); color:#fff; }
+  .team-linkedin svg{ width:15px; height:15px; }
   @keyframes fadein{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);} }
 
   /* OFERTA ACADEMICA */
@@ -227,9 +248,9 @@
   .news-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
   .news-card{ background:var(--white); border-radius:var(--radius); overflow:hidden; border:1px solid var(--border-soft); box-shadow:var(--shadow-sm); transition:.25s; display:flex; flex-direction:column; }
   .news-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow); }
-  .news-thumb{ height:150px; background:linear-gradient(135deg, #2B2B2B 0%, #1A1A1A 100%); display:flex; align-items:center; justify-content:center; position:relative; }
-  .news-thumb svg{ width:52px; height:52px; color:var(--purple-light); }
-  .news-thumb .date-tag{ position:absolute; bottom:10px; left:10px; background:rgba(255,255,255,.94); color:var(--ink); font-size:.72rem; font-weight:700; padding:5px 11px; border-radius:99px; }
+  .news-thumb{ height:170px; background-size:cover; background-position:center; position:relative; }
+  .news-thumb-overlay{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.05) 45%, rgba(0,0,0,.6) 100%); }
+  .news-thumb .date-tag{ position:absolute; bottom:10px; left:10px; z-index:1; background:rgba(255,255,255,.94); color:var(--ink); font-size:.72rem; font-weight:700; padding:5px 11px; border-radius:99px; }
   .news-body{ padding:20px 22px 24px; display:flex; flex-direction:column; gap:8px; flex-grow:1; }
   .news-body h4{ font-size:1.08rem; }
   .news-body p{ font-size:.9rem; color:var(--text-dark); flex-grow:1; }
@@ -246,12 +267,19 @@
   details.faq-item[open]{ border-color:var(--border-soft); background:var(--bg-soft); }
 
   /* TESTIMONIOS */
-  .testi-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
-  .testi-card{ background:var(--white); border:1px solid var(--border-soft); border-radius:var(--radius); padding:28px 24px; box-shadow:var(--shadow-sm); display:flex; flex-direction:column; gap:14px; }
+  .testi-carousel{ display:flex; align-items:center; gap:18px; }
+  .testi-viewport{ overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; scrollbar-width:none; flex:1; }
+  .testi-viewport::-webkit-scrollbar{ display:none; }
+  .testi-track{ display:flex; gap:26px; }
+  .testi-arrow{ width:46px; height:46px; border-radius:50%; background:#fff; border:1px solid var(--border-soft); box-shadow:var(--shadow-sm); display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0; color:var(--purple); transition:.2s; }
+  .testi-arrow:hover{ background:var(--purple); color:#fff; border-color:var(--purple); }
+  .testi-arrow svg{ width:20px; height:20px; }
+  .testi-card{ scroll-snap-align:start; flex:0 0 calc((100% - 52px)/3); background:var(--white); border:1px solid var(--border-soft); border-radius:var(--radius); padding:28px 24px; box-shadow:var(--shadow-sm); display:flex; flex-direction:column; gap:14px; }
   .testi-quote-ic{ width:30px; height:30px; color:var(--purple-light); }
   .testi-card p.quote{ font-size:.96rem; color:var(--text-dark); font-style:italic; flex-grow:1; }
   .testi-person{ display:flex; align-items:center; gap:12px; border-top:1px dashed var(--border-soft); padding-top:14px; }
-  .avatar{ width:46px; height:46px; border-radius:50%; background:var(--purple); color:#fff; display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-weight:700; flex-shrink:0; }
+  .avatar-illus{ width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .avatar-illus svg{ width:24px; height:24px; }
   .testi-person b{ display:block; font-size:.94rem; color:var(--ink); }
   .testi-person span{ font-size:.8rem; color:var(--gray-owl); }
 
@@ -340,18 +368,26 @@
   @media (max-width: 980px){
     .hero-grid{ grid-template-columns:1fr; }
     .pillars-grid{ grid-template-columns:1fr; }
-    .courses-grid, .news-grid, .testi-grid{ grid-template-columns:1fr 1fr; }
+    .courses-grid, .news-grid{ grid-template-columns:1fr 1fr; }
+    .testi-card{ flex:0 0 calc((100% - 26px)/2); }
+    .team-grid{ grid-template-columns:1fr 1fr; }
     .footer-grid{ grid-template-columns:1fr 1fr; }
     .contact-grid{ grid-template-columns:1fr; }
   }
   @media (max-width: 768px){
+    .nav-inner{ height:76px; }
+    .brand img{ height:50px; }
     nav.links{ position:fixed; top:76px; left:0; right:0; background:#fff; flex-direction:column; align-items:stretch; padding:14px; gap:4px; border-bottom:1px solid var(--border-soft); box-shadow:0 12px 20px rgba(0,0,0,.06); transform:translateY(-130%); opacity:0; transition:.25s; }
     nav.links.open{ transform:translateY(0); opacity:1; }
-    nav.links a{ padding:14px 16px; }
+    nav.links a{ padding:14px 16px; font-size:.92rem; }
+    nav.links a::after{ display:none; }
     .burger{ display:flex; }
     .nav-cta .btn{ display:none; }
     .features-strip{ grid-template-columns:1fr; }
-    .courses-grid, .news-grid, .testi-grid{ grid-template-columns:1fr; }
+    .courses-grid, .news-grid{ grid-template-columns:1fr; }
+    .testi-card{ flex:0 0 88%; }
+    .testi-arrow{ display:none; }
+    .team-grid{ grid-template-columns:1fr; }
     .footer-grid{ grid-template-columns:1fr; }
     .form-row{ grid-template-columns:1fr; }
     .section-pad{ padding:64px 0; }
@@ -478,6 +514,41 @@
         <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nuestra meta es capacitar cada a&ntilde;o a m&aacute;s personas, conect&aacute;ndolas con oportunidades laborales reales dentro de cada industria.</p>
       </div>
     </div>
+
+    <div class="team-head">
+      <span class="eyebrow">Nuestro equipo</span>
+      <h3>Liderazgo que inspira: nuestro equipo directivo</h3>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar" style="background:var(--purple);"><svg viewBox="0 0 24 24" fill="white"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+        <h4>Gabriela Torres</h4>
+        <p class="role">Directora Administrativa<br>EDA</p>
+        <a href="#" class="team-linkedin" onclick="return false;" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.5 8.65 22 11 22 14.2V21h-4v-6.05c0-1.44-.03-3.3-2.02-3.3-2.02 0-2.33 1.58-2.33 3.2V21h-4V9Z"/></svg></a>
+        <div><button class="btn btn-outline btn-sm" onclick="return false;">Sobre mí</button></div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:var(--gray-owl);"><svg viewBox="0 0 24 24" fill="white"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+        <h4>Andrés Salazar</h4>
+        <p class="role">Coordinador Académico<br>EDA</p>
+        <a href="#" class="team-linkedin" onclick="return false;" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.5 8.65 22 11 22 14.2V21h-4v-6.05c0-1.44-.03-3.3-2.02-3.3-2.02 0-2.33 1.58-2.33 3.2V21h-4V9Z"/></svg></a>
+        <div><button class="btn btn-outline btn-sm" onclick="return false;">Sobre mí</button></div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:var(--purple-dark);"><svg viewBox="0 0 24 24" fill="white"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+        <h4>Mónica Reyes</h4>
+        <p class="role">Coordinadora de Programas<br>EDA</p>
+        <a href="#" class="team-linkedin" onclick="return false;" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.5 8.65 22 11 22 14.2V21h-4v-6.05c0-1.44-.03-3.3-2.02-3.3-2.02 0-2.33 1.58-2.33 3.2V21h-4V9Z"/></svg></a>
+        <div><button class="btn btn-outline btn-sm" onclick="return false;">Sobre mí</button></div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:var(--purple-deep);"><svg viewBox="0 0 24 24" fill="white"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+        <h4>Diego Fernández</h4>
+        <p class="role">Coordinador de Bienestar Estudiantil<br>EDA</p>
+        <a href="#" class="team-linkedin" onclick="return false;" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.5 8.65 22 11 22 14.2V21h-4v-6.05c0-1.44-.03-3.3-2.02-3.3-2.02 0-2.33 1.58-2.33 3.2V21h-4V9Z"/></svg></a>
+        <div><button class="btn btn-outline btn-sm" onclick="return false;">Sobre mí</button></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -564,8 +635,8 @@
     <div class="news-grid">
 
       <div class="news-card">
-        <div class="news-thumb">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <div class="news-thumb" style="background-image:url('https://images.unsplash.com/photo-1618758993113-2447833402d6?fm=jpg&q=70&w=800&auto=format&fit=crop');">
+          <div class="news-thumb-overlay"></div>
           <span class="date-tag">Jun 2026</span>
         </div>
         <div class="news-body">
@@ -576,8 +647,8 @@
       </div>
 
       <div class="news-card">
-        <div class="news-thumb">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.5V9a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 4 9v7.5"/><path d="M3.3 7.3 12 12l8.7-4.7M12 12v10"/></svg>
+        <div class="news-thumb" style="background-image:url('https://images.unsplash.com/photo-1750031038542-c7a3db13cb2c?fm=jpg&q=70&w=800&auto=format&fit=crop');">
+          <div class="news-thumb-overlay"></div>
           <span class="date-tag">May 2026</span>
         </div>
         <div class="news-body">
@@ -588,8 +659,8 @@
       </div>
 
       <div class="news-card">
-        <div class="news-thumb">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 12a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/><path d="M12 8v4l3 2"/></svg>
+        <div class="news-thumb" style="background-image:url('https://images.unsplash.com/photo-1607013407627-6ee814329547?fm=jpg&q=70&w=800&auto=format&fit=crop');">
+          <div class="news-thumb-overlay"></div>
           <span class="date-tag">Abr 2026</span>
         </div>
         <div class="news-body">
@@ -650,31 +721,74 @@
       <p>Conoce lo que nuestros egresados están logrando hoy.</p>
     </div>
 
-    <div class="testi-grid">
-      <div class="testi-card">
-        <svg class="testi-quote-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h5v6a4 4 0 0 1-4 4H6v-3h2a1 1 0 0 0 1-1V9H7V7Zm9 0h5v6a4 4 0 0 1-4 4h-2v-3h2a1 1 0 0 0 1-1V9h-2V7Z"/></svg>
-        <p class="quote">Estudiar Tráfico Aéreo en EDA me abrió las puertas para trabajar como agente counter en un aeropuerto nacional. Las prácticas fueron clave para conseguir mi primer empleo.</p>
-        <div class="testi-person">
-          <div class="avatar">MJ</div>
-          <div><b>María José R.</b><span>Agente de Counter — Programa Tráfico Aéreo</span></div>
+    <div class="testi-carousel">
+      <button class="testi-arrow" onclick="slideTesti(-1)" aria-label="Testimonios anteriores">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+
+      <div class="testi-viewport" id="testiViewport">
+        <div class="testi-track">
+
+          <div class="testi-card">
+            <svg class="testi-quote-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h5v6a4 4 0 0 1-4 4H6v-3h2a1 1 0 0 0 1-1V9H7V7Zm9 0h5v6a4 4 0 0 1-4 4h-2v-3h2a1 1 0 0 0 1-1V9h-2V7Z"/></svg>
+            <p class="quote">Estudiar Tráfico Aéreo en EDA me abrió las puertas para trabajar como agente counter en un aeropuerto nacional. Las prácticas fueron clave para conseguir mi primer empleo.</p>
+            <div class="testi-person">
+              <div class="avatar-illus" style="background:var(--purple);"><svg viewBox="0 0 24 24" fill="white"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+              <div><b>María José R.</b><span>Agente de Counter — Programa Tráfico Aéreo</span></div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <svg class="testi-quote-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h5v6a4 4 0 0 1-4 4H6v-3h2a1 1 0 0 0 1-1V9H7V7Zm9 0h5v6a4 4 0 0 1-4 4h-2v-3h2a1 1 0 0 0 1-1V9h-2V7Z"/></svg>
+            <p class="quote">Gracias a la formación en EDA logré ingresar como agente de tráfico aéreo en una aerolínea internacional. El enfoque práctico marcó la diferencia en mi entrevista de trabajo.</p>
+            <div class="testi-person">
+              <div class="avatar-illus" style="background:var(--gray-owl);"><svg viewBox="0 0 24 24" fill="white"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+              <div><b>Kevin S.</b><span>Agente de Tráfico Aéreo — Programa Tráfico Aéreo</span></div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <svg class="testi-quote-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h5v6a4 4 0 0 1-4 4H6v-3h2a1 1 0 0 0 1-1V9H7V7Zm9 0h5v6a4 4 0 0 1-4 4h-2v-3h2a1 1 0 0 0 1-1V9h-2V7Z"/></svg>
+            <p class="quote">Gracias al curso de Repostería monté mi propio emprendimiento de tortas y postres personalizados. Recomiendo EDA por la calidad de sus docentes y el material práctico.</p>
+            <div class="testi-person">
+              <div class="avatar-illus" style="background:var(--purple-dark);"><svg viewBox="0 0 24 24" fill="white"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+              <div><b>Daniela C.</b><span>Emprendedora — Programa de Repostería</span></div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <svg class="testi-quote-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h5v6a4 4 0 0 1-4 4H6v-3h2a1 1 0 0 0 1-1V9H7V7Zm9 0h5v6a4 4 0 0 1-4 4h-2v-3h2a1 1 0 0 0 1-1V9h-2V7Z"/></svg>
+            <p class="quote">El programa de Repostería me dio las bases técnicas y de costos que necesitaba para trabajar en la pastelería de un hotel reconocido en la ciudad.</p>
+            <div class="testi-person">
+              <div class="avatar-illus" style="background:#8A8A8A;"><svg viewBox="0 0 24 24" fill="white"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+              <div><b>Fernanda L.</b><span>Pastelera de Hotel — Programa de Repostería</span></div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <svg class="testi-quote-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h5v6a4 4 0 0 1-4 4H6v-3h2a1 1 0 0 0 1-1V9H7V7Zm9 0h5v6a4 4 0 0 1-4 4h-2v-3h2a1 1 0 0 0 1-1V9h-2V7Z"/></svg>
+            <p class="quote">Actualmente trabajo en un salón de belleza reconocido gracias a la formación que recibí en EDA. El programa de Estética me dio bases sólidas en maquillaje y cuidado facial.</p>
+            <div class="testi-person">
+              <div class="avatar-illus" style="background:var(--purple);"><svg viewBox="0 0 24 24" fill="white"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+              <div><b>Andrea T.</b><span>Especialista en Belleza — Programa de Estética</span></div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <svg class="testi-quote-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h5v6a4 4 0 0 1-4 4H6v-3h2a1 1 0 0 0 1-1V9H7V7Zm9 0h5v6a4 4 0 0 1-4 4h-2v-3h2a1 1 0 0 0 1-1V9h-2V7Z"/></svg>
+            <p class="quote">Estudiar Estética y Belleza en EDA me permitió abrir mi propio espacio de barbería y estilismo. La práctica constante me dio la confianza para atender a mis primeros clientes.</p>
+            <div class="testi-person">
+              <div class="avatar-illus" style="background:var(--purple-deep);"><svg viewBox="0 0 24 24" fill="white"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+              <div><b>Carlos M.</b><span>Barbero Profesional — Programa de Estética</span></div>
+            </div>
+          </div>
+
         </div>
       </div>
-      <div class="testi-card">
-        <svg class="testi-quote-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h5v6a4 4 0 0 1-4 4H6v-3h2a1 1 0 0 0 1-1V9H7V7Zm9 0h5v6a4 4 0 0 1-4 4h-2v-3h2a1 1 0 0 0 1-1V9h-2V7Z"/></svg>
-        <p class="quote">Gracias al curso de Repostería monté mi propio emprendimiento de tortas y postres personalizados. Recomiendo EDA por la calidad de sus docentes y el material práctico.</p>
-        <div class="testi-person">
-          <div class="avatar">DC</div>
-          <div><b>Daniela C.</b><span>Emprendedora — Programa de Repostería</span></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <svg class="testi-quote-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h5v6a4 4 0 0 1-4 4H6v-3h2a1 1 0 0 0 1-1V9H7V7Zm9 0h5v6a4 4 0 0 1-4 4h-2v-3h2a1 1 0 0 0 1-1V9h-2V7Z"/></svg>
-        <p class="quote">Actualmente trabajo en un salón de belleza reconocido gracias a la formación que recibí en EDA. El programa de Estética me dio bases sólidas en maquillaje y cuidado facial.</p>
-        <div class="testi-person">
-          <div class="avatar">AT</div>
-          <div><b>Andrea T.</b><span>Especialista en Belleza — Programa de Estética</span></div>
-        </div>
-      </div>
+
+      <button class="testi-arrow" onclick="slideTesti(1)" aria-label="Más testimonios">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
     </div>
   </div>
 </section>
@@ -877,6 +991,16 @@
     formStep.style.display = 'none';
     formSuccess.classList.add('active');
     return false;
+  }
+
+  // Testimonials carousel
+  function slideTesti(dir){
+    const viewport = document.getElementById('testiViewport');
+    const card = viewport.querySelector('.testi-card');
+    if(!card) return;
+    const gap = 26;
+    const amount = card.getBoundingClientRect().width + gap;
+    viewport.scrollBy({ left: dir * amount, behavior: 'smooth' });
   }
 </script>
 </body>
