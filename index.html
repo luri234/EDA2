@@ -188,6 +188,21 @@
   .feature-item h4{ font-size:1.05rem; }
   .feature-item p{ font-size:.9rem; color:var(--gray-owl); margin-top:6px; }
 
+  /* HOME - GALERIA */
+  .gallery-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+  .gallery-item{ position:relative; height:220px; border-radius:16px; background-size:cover; background-position:center; border:1px solid var(--border-soft); overflow:hidden; }
+  .gallery-item::after{ content:""; position:absolute; inset:0; background:linear-gradient(0deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,0) 50%); }
+  .gallery-item span{ position:absolute; left:14px; bottom:14px; z-index:1; background:rgba(255,255,255,.95); color:var(--purple-dark); font-size:.72rem; font-weight:700; padding:5px 12px; border-radius:99px; }
+
+  /* HOME - CONVENIOS Y ALIANZAS */
+  .partners-strip{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+  .partner-chip{ display:flex; flex-direction:column; align-items:center; gap:10px; text-align:center; background:var(--white); border:1px solid var(--border-soft); border-radius:16px; padding:28px 18px; transition:.25s; }
+  .partner-chip:hover{ transform:translateY(-4px); box-shadow:var(--shadow-sm); }
+  .partner-chip .ic{ width:52px; height:52px; border-radius:14px; background:var(--bg-soft); display:flex; align-items:center; justify-content:center; }
+  .partner-chip .ic svg{ width:26px; height:26px; color:var(--purple); }
+  .partner-chip b{ font-family:var(--font-display); font-size:.92rem; color:var(--ink); }
+  .partner-chip span{ font-size:.78rem; color:var(--gray-owl); }
+
   /* NOSOTROS */
   /* NOSOTROS */
   #nosotros{ padding-bottom:96px; }
@@ -374,6 +389,8 @@
     .team-grid{ grid-template-columns:1fr 1fr; }
     .footer-grid{ grid-template-columns:1fr 1fr; }
     .contact-grid{ grid-template-columns:1fr; }
+    .gallery-grid{ grid-template-columns:1fr 1fr; }
+    .partners-strip{ grid-template-columns:1fr 1fr; }
   }
   @media (max-width: 768px){
     .nav-inner{ height:76px; }
@@ -480,6 +497,117 @@
       <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
       <h4>Bolsa de prácticas</h4>
       <p>Te acompañamos en tu inserción laboral al terminar el programa.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NOTICIAS DESTACADAS ================= -->
+<section class="section-pad bg-soft">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Noticias</span>
+      <h2>Lo más reciente en EDA</h2>
+      <p>Entérate de nuestras campañas, alianzas y actividades más recientes.</p>
+    </div>
+    <div class="news-grid">
+
+      <div class="news-card">
+        <div class="news-thumb" style="background-image:url('https://images.unsplash.com/photo-1618758993113-2447833402d6?fm=jpg&q=70&w=800&auto=format&fit=crop');">
+          <div class="news-thumb-overlay"></div>
+          <span class="date-tag">Jun 2026</span>
+        </div>
+        <div class="news-body">
+          <h4>Feria de Empleo EDA 2026</h4>
+          <p>Reunimos a más de 15 empresas aliadas para conectar a nuestros egresados con oportunidades laborales reales del sector.</p>
+          <span class="read-more">Leer más →</span>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-thumb" style="background-image:url('https://images.unsplash.com/photo-1750031038542-c7a3db13cb2c?fm=jpg&q=70&w=800&auto=format&fit=crop');">
+          <div class="news-thumb-overlay"></div>
+          <span class="date-tag">May 2026</span>
+        </div>
+        <div class="news-body">
+          <h4>Nueva alianza con aerolíneas nacionales</h4>
+          <p>Firmamos un convenio de prácticas para los estudiantes del programa de Tráfico Aéreo, ampliando las oportunidades de inserción laboral.</p>
+          <span class="read-more">Leer más →</span>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-thumb" style="background-image:url('https://images.unsplash.com/photo-1607013407627-6ee814329547?fm=jpg&q=70&w=800&auto=format&fit=crop');">
+          <div class="news-thumb-overlay"></div>
+          <span class="date-tag">Abr 2026</span>
+        </div>
+        <div class="news-body">
+          <h4>Campaña de becas para nuevos estudiantes</h4>
+          <p>Lanzamos una campaña de becas parciales para los programas de Repostería y Estética dirigida a nuevos postulantes.</p>
+          <span class="read-more">Leer más →</span>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center; margin-top:40px;">
+      <a href="noticias.html" class="btn btn-outline">Ver todas las noticias</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALERIA ================= -->
+<section class="section-pad">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Galería</span>
+      <h2>Nuestros programas en acción</h2>
+      <p>Imágenes referenciales de las áreas en las que formamos profesionales.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1721826054233-08d9b242a961?fm=jpg&q=70&w=900&auto=format&fit=crop');">
+        <span>Tráfico Aéreo</span>
+      </div>
+      <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1519733870-f96bef9bc85f?fm=jpg&q=70&w=900&auto=format&fit=crop');">
+        <span>Repostería</span>
+      </div>
+      <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1636023730877-233b9237d4ec?fm=jpg&q=70&w=900&auto=format&fit=crop');">
+        <span>Estética y Belleza</span>
+      </div>
+      <div class="gallery-item" style="background-image:url('https://images.unsplash.com/photo-1627556704283-452301a45fd0?fm=jpg&q=70&w=900&auto=format&fit=crop');">
+        <span>Vida estudiantil</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONVENIOS Y ALIANZAS ================= -->
+<section class="section-pad bg-soft">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Convenios y Alianzas</span>
+      <h2>Instituciones que confían en nuestros egresados</h2>
+      <p>Trabajamos junto a empresas del sector para ofrecer prácticas y oportunidades reales de empleo.</p>
+    </div>
+    <div class="partners-strip">
+      <div class="partner-chip">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.5V9a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 4 9v7.5"/><path d="M3.3 7.3 12 12l8.7-4.7M12 12v10"/></svg></div>
+        <b>Aerolíneas Nacionales</b>
+        <span>Convenio de prácticas</span>
+      </div>
+      <div class="partner-chip">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15Z"/></svg></div>
+        <b>Cadena Hotelera Andina</b>
+        <span>Convenio de prácticas</span>
+      </div>
+      <div class="partner-chip">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c1.5 3 4 4.5 4 8a4 4 0 0 1-8 0c0-3.5 2.5-5 4-8Z"/><path d="M6 21c1-2 3-3 6-3s5 1 6 3"/></svg></div>
+        <b>Red de Salones de Belleza</b>
+        <span>Convenio de prácticas</span>
+      </div>
+      <div class="partner-chip">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <b>Bolsa de Empleo Ecuador</b>
+        <span>Inserción laboral</span>
+      </div>
     </div>
   </div>
 </section>
